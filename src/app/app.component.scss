@@ -1,0 +1,41 @@
+:host {
+    height: 100vh;
+    background: var(--main-background);
+    padding: var(--app-pane-padding);
+    display: block;
+    
+    yuv-responsive-master-slave {
+        height: 100vh;
+    }
+    
+    .search {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "search" "result";
+        background-color: var(--panel-background-lightgrey);
+        
+        yuv-quick-search {
+            grid-area: search;
+            border-bottom: 1px solid var(--panel-divider-color);
+        }
+        yuv-search-result {
+            grid-area: result;
+        }
+    }
+    
+    .details {
+        display: flex;
+        flex-flow: column;
+        
+        yuv-object-details,
+        p-chart {
+            border: 1px solid var(--panel-divider-color);
+        }
+        p-chart {
+            background: var(--panel-background);
+            padding: var(--app-pane-padding);
+            margin-top: var(--app-pane-padding);
+        }
+    }
+}
